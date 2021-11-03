@@ -53,7 +53,4 @@ class ErrorsPage(Frame):
                 height=500,
                 width=950,
             )
-            # self.controller.unbind("<Button-3>")
-            # self.controller.bind("<Control-Button-1>", self.controller.event_generate("<Control-c>"))
-            # md.bind("<Button-3>", lambda e: self.event_generate("<Control-c>"))
             md.pack(fill=BOTH, expand=1)

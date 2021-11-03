@@ -6,6 +6,7 @@ except Exception as e:
     print(e)
     quit()
 
+import os
 from markdown2 import Markdown
 from tkhtmlview import HTMLLabel
 
@@ -35,7 +36,7 @@ class HelpPage(Frame):
         self.scrollable.pack()
         frame.pack()
 
-        with open("assets/help.md") as f:
+        with open(os.path.join(os.getcwd(), "assets", "help.md")) as f:
             file_text = f.read()
             HTMLLabel(
                 self.scrollable.scrollable_frame,

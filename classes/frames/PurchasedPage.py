@@ -53,7 +53,4 @@ class PurchasedPage(Frame):
                 height=500,
                 width=950,
             )
-            md.configure(state="disabled")
-            md.configure(inactiveselectbackground=md.cget("selectbackground"))
-            # md.bind("<Button-3>", lambda e: self.event_generate("<Control-c>"))
             md.pack(fill=BOTH, expand=1)

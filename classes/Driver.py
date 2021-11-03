@@ -1,5 +1,4 @@
 import os
-from pathlib import Path
 import time
 from datetime import datetime
 
@@ -20,7 +19,7 @@ class Driver(webdriver.Firefox):
     """
 
     def __init__(self, *args, **kwargs):
-        self.ff_profile_path = os.path.join(Path(__file__).parent.parent, "assets", "drhphmfl.selenium_profile")
+        self.ff_profile_path = os.path.join(os.getcwd(), "assets", "drhphmfl.selenium_profile")
 
         self.extension_id = "tprb.addon@searxes.danwin1210.me"
         self.user_properties = {}
