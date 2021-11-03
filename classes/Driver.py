@@ -24,6 +24,7 @@ class Driver(webdriver.Firefox):
 
         self.extension_id = "tprb.addon@searxes.danwin1210.me"
         self.user_properties = {}
+        self.my_timeout = 10
 
         "firefox profile"
         profile = FirefoxProfile(self.ff_profile_path)
@@ -102,7 +103,7 @@ class Driver(webdriver.Firefox):
                 self.get("https://www.bestbuy.com/login")
 
             login_url = self.current_url
-            wait = WebDriverWait(self, timeout=10)
+            wait = WebDriverWait(self, timeout=self.my_timeout)
 
             wait.until(EC.visibility_of_element_located(
                 (By.ID, "fld-e"))).send_keys(self.user_properties["email"])
@@ -171,8 +172,7 @@ class Driver(webdriver.Firefox):
 
     def buy_product(self):
         """the entire process for buying a product"""
-        timeout = 15
-        wait = WebDriverWait(self, timeout)
+        wait = WebDriverWait(self, timeout=self.my_timeout)
 
         self.get("https://www.bestbuy.com/cart")
         if "https://www.bestbuy.com/identity/signin" in self.current_url:
@@ -212,7 +212,7 @@ class Driver(webdriver.Firefox):
 
         btn_div = wait.until(EC.visibility_of_element_located(
             (By.CLASS_NAME, "cia_form__controls")))
-        WebDriverWait(btn_div, 15).until(
+        WebDriverWait(btn_div, timeout=self.my_timeout).until(
             EC.element_to_be_clickable((By.TAG_NAME, "button"))).click()
 
     def _cart_method(self, wait):
@@ -220,7 +220,7 @@ class Driver(webdriver.Firefox):
         lists = wait.until(EC.presence_of_all_elements_located(
             (By.CLASS_NAME, "availability__list")))
         for li in lists:
-            options = WebDriverWait(li, 15).until(EC.presence_of_all_elements_located(
+            options = WebDriverWait(li, timeout=self.my_timeout).until(EC.presence_of_all_elements_located(
                 (By.CLASS_NAME, "availability__fulfillment")))
             for option in options:
                 try:
@@ -229,7 +229,7 @@ class Driver(webdriver.Firefox):
                         By.CLASS_NAME, "availability__label").text.lower().replace("\n", " ").strip()
 
                     if any(s in label_text for s in matches):
-                        WebDriverWait(option, 15).until(
+                        WebDriverWait(option, timeout=self.my_timeout).until(
                             EC.element_to_be_clickable((By.TAG_NAME, "input"))).click()
                         break
                 except Exception as e:
@@ -243,7 +243,7 @@ class Driver(webdriver.Firefox):
         btn_div = wait.until(EC.presence_of_element_located(
             (By.CLASS_NAME, "button--continue")))
         self._wait_until_not_loading()
-        WebDriverWait(btn_div, 15).until(
+        WebDriverWait(btn_div, timeout=self.my_timeout).until(
             EC.element_to_be_clickable((By.TAG_NAME, "button"))).click()
 
     def _delivery_method(self, wait):
@@ -260,7 +260,7 @@ class Driver(webdriver.Firefox):
         btn_div = wait.until(EC.presence_of_element_located(
             (By.CLASS_NAME, "button--continue")))
         self._wait_until_not_loading()
-        WebDriverWait(btn_div, 15).until(
+        WebDriverWait(btn_div, timeout=self.my_timeout).until(
             EC.element_to_be_clickable((By.TAG_NAME, "button"))).click()
 
     def _fast_track_method(self, wait):
@@ -278,10 +278,10 @@ class Driver(webdriver.Firefox):
         self._wait_until_not_loading()
 
         # buy button
-        curr_url = self.current_url
-        WebDriverWait(btn_div, 15).until(
-            EC.element_to_be_clickable((By.TAG_NAME, "button"))).click()
-        WebDriverWait(self, timeout=30).until(EC.url_changes(curr_url))
+        # curr_url = self.current_url
+        # WebDriverWait(btn_div, timeout=self.my_timeout).until(
+        #     EC.element_to_be_clickable((By.TAG_NAME, "button"))).click()
+        # WebDriverWait(self, timeout=30).until(EC.url_changes(curr_url))
         return True
 
     def _payment_method(self, wait):
@@ -300,10 +300,10 @@ class Driver(webdriver.Firefox):
         self._wait_until_not_loading()
 
         # buy button
-        curr_url = self.current_url
-        WebDriverWait(btn_div, 15).until(
-            EC.element_to_be_clickable((By.TAG_NAME, "button"))).click()
-        WebDriverWait(self, timeout=30).until(EC.url_changes(curr_url))
+        # curr_url = self.current_url
+        # WebDriverWait(btn_div, timeout=self.my_timeout).until(
+        #     EC.element_to_be_clickable((By.TAG_NAME, "button"))).click()
+        # WebDriverWait(self, timeout=30).until(EC.url_changes(curr_url))
         return True
 
     def _is_loading(self):

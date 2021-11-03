@@ -235,5 +235,5 @@ class LoginPage(Frame):
                 }
             )
             "add widgets to a sub-container"
-            sub_container.pack()
+            sub_container.pack(padx=(150, 0))
         "update canvas scrollable widget"

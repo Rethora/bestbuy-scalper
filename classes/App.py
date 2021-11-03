@@ -51,6 +51,8 @@ class App(Tk):
         self.body_font = tkfont.Font(family="Sans-Serif", size=11)
         self.button_font = tkfont.Font(
             family="Cursive", size=14, weight="bold")
+        self.italic_font = tkfont.Font(family="Sans-Serif", slant="italic", size=10)
+        self.md_font = tkfont.Font(family="Sans-Serif", size=5)
 
         "button style"
         self.button_width = 8
@@ -231,7 +233,9 @@ class App(Tk):
                           email + ". Continuing to next driver...")
                     print(exp)
                     driver.take_screenshot(
-                        self.err_dir, name="add_to_cart_" + email)
+                        self.err_dir,
+                        name="add_to_cart_" + email.replace(".", "").replace(":", "").replace("/", "")
+                    )
                     driver.quit()
                     closed_drivers.append(driver)
 
@@ -241,14 +245,19 @@ class App(Tk):
                 email = driver.get_user_prop("email")
                 try:
                     driver.buy_product()
-                    driver.take_screenshot(self.pur_dir, name=email)
+                    driver.take_screenshot(
+                        self.pur_dir,
+                        name=email.replace(".", "").replace(":", "").replace("/", "")
+                    )
                     driver.quit()
                 except Exception as exp:
                     print("Error while buying product for driver with email " +
                           driver.user_properties['email'] + ". Continuing to next driver...")
                     print(exp)
                     driver.take_screenshot(
-                        self.err_dir, name="buying_" + email)
+                        self.err_dir,
+                        name="buying_" + email.replace(".", "").replace(":", "").replace("/", "")
+                    )
                     driver.quit()
                     closed_drivers.append(driver)
         except Exception as exp:
@@ -260,6 +269,8 @@ class App(Tk):
             self.frame_func("ErrorsPage", "draw_info", self.tmp_dir)
             self.frame_func("PurchasedPage", "draw_info", self.tmp_dir)
             self.frame_func("FinishPage", "draw_info")
+            self.unbind("<Button-3>")
+            self.bind("<Button-3>", lambda e: self.event_generate("<Control-c>"))
             self.show_frame("FinishPage")
 
     def _clean_drivers(self, closed):
@@ -281,7 +292,8 @@ class App(Tk):
             err_md.write("Nothing to show.")
         else:
             for f in err_pics:
-                string = "- [{}]({})\n".format(f, join(self.err_dir, f))
+                path = join(self.err_dir, f)
+                string = "<sup>[{}]({})<sup>\n".format(path, path)
                 err_md.write(string)
         err_md.close()
 
@@ -291,7 +303,8 @@ class App(Tk):
             purchased_md.write("Nothing to show.")
         else:
             for f in purchased_pics:
-                string = "- [{}]({})\n".format(f, join(self.pur_dir, f))
+                path = join(self.pur_dir, f)
+                string = "<sup>[{}]({})<sup>\n".format(path, path)
                 purchased_md.write(string)
         purchased_md.close()
 

@@ -23,6 +23,14 @@ class StartPage(Frame):
         self.url = StringVar()
         self.num_products = IntVar()
 
+        Label(
+            self,
+            text="-Make sure you have read the help text before using for the first time-",
+            font=controller.italic_font,
+            bg=controller.bg_color,
+            fg=controller.fg_color,
+        ).pack(pady=(150, 0))
+
         "user input: link"
         Label(
             self,
@@ -30,7 +38,7 @@ class StartPage(Frame):
             font=controller.body_font,
             bg=controller.bg_color,
             fg=controller.fg_color,
-        ).pack(pady=(150, 5))
+        ).pack(pady=(20, 0))
         Entry(
             self,
             font=controller.body_font,
@@ -47,7 +55,7 @@ class StartPage(Frame):
             font=controller.body_font,
             bg=controller.bg_color,
             fg=controller.fg_color,
-        ).pack(pady=(20, 5))
+        ).pack(pady=(20, 0))
         Spinbox(
             self,
             font=controller.body_font,

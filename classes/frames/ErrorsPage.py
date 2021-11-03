@@ -42,14 +42,18 @@ class ErrorsPage(Frame):
 
         with open(os.path.join(tmp_dir, "errors.md")) as f:
             file_text = f.read()
-            HTMLLabel(
+            md = HTMLLabel(
                 self.scrollable.scrollable_frame,
                 html=Markdown().convert(file_text),
                 background=self.controller.bg_color,
                 fg=self.controller.fg_color,
-                font=self.controller.body_font,
+                font=self.controller.md_font,
                 borderwidth=0,
                 selectborderwidth=0,
                 height=500,
                 width=950,
-            ).pack(fill=BOTH, expand=1)
+            )
+            # self.controller.unbind("<Button-3>")
+            # self.controller.bind("<Control-Button-1>", self.controller.event_generate("<Control-c>"))
+            # md.bind("<Button-3>", lambda e: self.event_generate("<Control-c>"))
+            md.pack(fill=BOTH, expand=1)

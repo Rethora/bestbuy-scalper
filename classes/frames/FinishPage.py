@@ -43,6 +43,7 @@ class FinishPage(Frame):
 
         "this is where we will either show the info about bought products or tell the user that no items were bought"
         url = self.controller.get_user_setting("url")
+        url = (url[:100] + "...") if len(url) > 100 else url
         time = self.controller.get_curr_time()
         drivers = self.controller.drivers
         num_drivers_left = len(drivers)
@@ -96,11 +97,6 @@ class FinishPage(Frame):
                 fg=self.controller.fg_color,
                 font=self.controller.body_font
             ).pack(pady=(20, 0))
-
-            # for i, driver in enumerate(drivers):
-            #     email = driver.get_user_prop("email")
-            #     Label(self.container, text=email, font=self.controller.body_font,
-            #           bg=self.controller.bg_color, fg=self.controller.accent_color).pack()
         else:
             Label(
                 self.container,

@@ -38,6 +38,7 @@ class WatchPage(Frame):
 
     def draw_info(self):
         url = self.controller.user_settings["url"]
+        url = (url[:100] + "...") if len(url) > 100 else url
         url_label = Label(self.info_container, text="Watching: " + url,
                           font=self.controller.body_font, bg=self.controller.bg_color, fg="blue", cursor="hand2")
         url_label.bind("<Button-1>", lambda e: self.controller.open_page(url))

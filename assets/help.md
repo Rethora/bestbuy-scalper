@@ -1,4 +1,3 @@
-<!-- cutoff: col=115 -->
 #### Important Notes
 
 This program was made with the assumption that you want  
@@ -37,5 +36,11 @@ to orders that were processed (like returns or changes).
     - This [website](https://whatismyipaddress.com) should show you your current valid location
     - If it does not, find out why before continuing
     - Best Buy needs to know your real location for any reason it selects in-store pickup
-3. Set your computer's sleep settings to never sleep/hibernate
+3. [Download Firefox](https://www.mozilla.org/en-US/firefox/new/) (if you don't have it already)
+    - This is the browser that this application uses
+4. Set your computer's sleep settings to never sleep/hibernate
     - This will cause application to stop running
+
+#### Troubleshooting:
+
+1. Make sure Firefox is up-to-date

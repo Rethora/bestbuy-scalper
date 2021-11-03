@@ -52,6 +52,7 @@ class ConfirmPage(Frame):
               fg=self.controller.fg_color, ).pack()
 
         url = self.controller.get_user_setting("url")
+        url = (url[:100] + "...") if len(url) > 100 else url
 
         url_label = Label(
             self.container, text=url,
