@@ -27,7 +27,6 @@ class Driver(webdriver.Firefox):
 
         "firefox profile"
         profile = FirefoxProfile(self.ff_profile_path)
-        #
         "default driver options"
         options = FirefoxOptions()
         # options.headless = True
