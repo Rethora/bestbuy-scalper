@@ -17,7 +17,7 @@ import time
 from datetime import datetime
 import threading
 import webbrowser
-from os import listdir
+from os import listdir, name
 from os.path import isfile, join
 
 from classes.frames.StartPage import StartPage
@@ -58,15 +58,24 @@ class App(Tk):
         self.button_width = 8
         self.button_padding = 10
 
-        "menubar"
-        menu = Menu(
-            self, fg=self.accent_fg_color, bg=self.accent_color, font=self.body_font
-        )
-        menu.add_command(
-            label="Help",
-            command=lambda: self.show_frame("HelpPage"),
-        )
-        Tk.config(self, menu=menu, bg=self.accent_fg_color)
+        "menu bar"
+        if name == "posix":
+            win = self
+            menu_bar = Menu(win)
+            app_menu = Menu(menu_bar, name='apple')
+            menu_bar.add_cascade(menu=app_menu)
+            app_menu.add_command(label='Help', command=lambda: self.show_frame("HelpPage"))
+            app_menu.add_separator()
+            win['menu'] = menu_bar
+        else:
+            menu = Menu(
+                self, fg=self.accent_fg_color, bg=self.accent_color, font=self.body_font
+            )
+            menu.add_command(
+                label="Help",
+                command=lambda: self.show_frame("HelpPage"),
+            )
+            Tk.config(self, menu=menu, bg=self.accent_fg_color)
 
         """the container is where we'll stack a bunch of frames on top of each other
         then the one we want visible will be raised above the others """
@@ -234,7 +243,7 @@ class App(Tk):
                     print(exp)
                     driver.take_screenshot(
                         self.err_dir,
-                        name="add_to_cart_" + email.replace(".", "").replace(":", "").replace("/", "")
+                        name="add-to-cart-" + self._format_email(email)
                     )
                     driver.quit()
                     closed_drivers.append(driver)
@@ -247,7 +256,7 @@ class App(Tk):
                     driver.buy_product()
                     driver.take_screenshot(
                         self.pur_dir,
-                        name=email.replace(".", "").replace(":", "").replace("/", "")
+                        name=self._format_email(email)
                     )
                     driver.quit()
                 except Exception as exp:
@@ -256,7 +265,7 @@ class App(Tk):
                     print(exp)
                     driver.take_screenshot(
                         self.err_dir,
-                        name="buying_" + email.replace(".", "").replace(":", "").replace("/", "")
+                        name="buying_" + self._format_email(email)
                     )
                     driver.quit()
                     closed_drivers.append(driver)
@@ -291,9 +300,15 @@ class App(Tk):
         if len(err_pics) == 0:
             err_md.write("Nothing to show.")
         else:
+            err_md.write("If the picture does not open, this is the file path on your computer.  \n")
+            err_md.write("You can open it there. Once you close this app the images will be deleted.  \n")
+            err_md.write("So if you would like to, leave this window open until you are done viewing/saving.  \n")
+            err_md.write(
+                "**The folder may be hidden. You will have to enable 'show hidden items' in file manager.**  \n  \n"
+            )
             for f in err_pics:
                 path = join(self.err_dir, f)
-                string = "<sup>[{}]({})<sup>\n".format(path, path)
+                string = "<sub>[{}]({})</sub>\n".format(path, path)
                 err_md.write(string)
         err_md.close()
 
@@ -302,9 +317,15 @@ class App(Tk):
         if len(purchased_pics) == 0:
             purchased_md.write("Nothing to show.")
         else:
+            purchased_md.write("If the picture does not open, this is the file path on your computer.  \n")
+            purchased_md.write("You can open it there. Once you close this app the images will be deleted.  \n")
+            purchased_md.write("So if you would like to, leave this window open until you are done viewing/saving.  \n")
+            purchased_md.write(
+                "The folder may be hidden. You will have to enable 'show hidden items' in file manager.  \n  \n"
+            )
             for f in purchased_pics:
                 path = join(self.pur_dir, f)
-                string = "<sup>[{}]({})<sup>\n".format(path, path)
+                string = "<sub>[{}]({})</sub>\n".format(path, path)
                 purchased_md.write(string)
         purchased_md.close()
 
@@ -320,3 +341,9 @@ class App(Tk):
                 pass
             finally:
                 self.destroy()
+
+    @staticmethod
+    def _format_email(email):
+        email = email.lower().replace(".", "").replace(":", "").replace("/", "").replace("_", "")
+        email = (email[:8] if len(email) > 8 else email)
+        return email
