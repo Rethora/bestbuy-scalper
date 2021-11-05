@@ -50,8 +50,6 @@ class HelpPage(Frame):
                 width=950,
             ).pack(fill=BOTH, expand=1)
 
-            # self.scrollable.update()
-
         Button(
             self,
             text="Back",
