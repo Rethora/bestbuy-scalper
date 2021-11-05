@@ -61,7 +61,7 @@ class StartPage(Frame):
             font=controller.body_font,
             from_=1,
             to=20,
-            width=3,
+            width=7,
             textvariable=self.num_products,
             bg=controller.bg_color,
             fg=controller.fg_color,
