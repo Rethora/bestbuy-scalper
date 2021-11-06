@@ -37,6 +37,8 @@ class App(Tk):
         Tk.__init__(self, *args, **kwargs)
         self.title("Best Buy Scalper")
         self.minsize(1000, 700)
+        icon = PhotoImage(file="assets/robot-head.png")
+        self.iconphoto(False, icon)
 
         "global window styles"
         self.bg_color = "white"
