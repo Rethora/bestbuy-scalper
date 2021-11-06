@@ -44,3 +44,11 @@ to orders that were processed (like returns or changes).
 #### Troubleshooting:
 
 1. Make sure Firefox is up-to-date
+2. Checking link/logins on Windows:
+   - Sometimes web browser does not initialize properly
+   - Just try a few more times
+   - Once it is running, it is good to go
+3. 'Something went wrong error'
+   - Sometimes Best Buy forbids requests if too many hits are being made on server
+   - More specifically on login
+   - Try again later (maybe a couple hours)
