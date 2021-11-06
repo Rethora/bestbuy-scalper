@@ -29,6 +29,7 @@ class Driver(webdriver.Firefox):
         profile = FirefoxProfile(self.ff_profile_path)
         "default driver options"
         options = FirefoxOptions()
+        # TODO: uncomment headless
         # options.headless = True
 
         "install executable (or find in cache) for driver"
@@ -74,9 +75,9 @@ class Driver(webdriver.Firefox):
         """
         path = os.path.join(directory, name)
         if add_time:
-            path += "_" + \
+            path += "-" + \
                     str(datetime.now().strftime(
-                        "%Y-%m-%d %H:%M:%S")).replace(" ", "_").replace(":", "-")
+                        "%Y-%m-%d %H:%M:%S")).replace(" ", "-").replace(":", "-")
         path += ".png"
 
         "uninstall extensions so all web elements are visible for screenshot"
@@ -121,13 +122,27 @@ class Driver(webdriver.Firefox):
 
     def check_stock(self):
         """return bool for if button is clickable on watch link"""
-        btn_div = self.find_element(
-            By.CLASS_NAME, "fulfillment-add-to-cart-button")
-        btn = btn_div.find_element(By.TAG_NAME, "button")
+        in_stock = None
+        times_failed = 0
+        while times_failed <= 3:
+            try:
+                btn_div = self.find_element(
+                    By.CLASS_NAME, "fulfillment-add-to-cart-button")
+                btn = btn_div.find_element(By.TAG_NAME, "button")
 
-        if not btn.is_displayed() or not btn.is_enabled():
-            return False
-        return True
+                if not btn.is_displayed() or not btn.is_enabled():
+                    in_stock = False
+                else:
+                    in_stock = True
+                break
+            except Exception as exp:
+                if times_failed == 3:
+                    raise Exception(exp)
+                print("trying " + str(3 - times_failed) + " more times")
+                times_failed += 1
+                time.sleep(1)
+                self.refresh()
+        return in_stock
 
     def add_to_cart(self):
         """click add to cart button (add warranty if selected)"""
@@ -159,12 +174,12 @@ class Driver(webdriver.Firefox):
                 wait.until(EC.visibility_of_element_located(
                     (By.CLASS_NAME, "c-modal-window")))
                 added_to_cart = True
-            except Exception as e:
-                print("Did not add item to cart trying " +
-                      str(3 - times_failed) + " more times.")
-                print(e)
+            except Exception as exp:
                 if times_failed == 3:
                     raise Exception("Could not add item to cart.")
+                print(exp)
+                print("Did not add item to cart trying " +
+                      str(3 - times_failed) + " more times.")
                 times_failed += 1
                 self.refresh()
 
@@ -275,7 +290,7 @@ class Driver(webdriver.Firefox):
 
         self._wait_until_not_loading()
 
-        # buy button
+        # TODO: uncomment buy method
         # curr_url = self.current_url
         # WebDriverWait(btn_div, timeout=self.my_timeout).until(
         #     EC.element_to_be_clickable((By.TAG_NAME, "button"))).click()
@@ -297,7 +312,7 @@ class Driver(webdriver.Firefox):
 
         self._wait_until_not_loading()
 
-        # buy button
+        # TODO: uncomment buy method
         # curr_url = self.current_url
         # WebDriverWait(btn_div, timeout=self.my_timeout).until(
         #     EC.element_to_be_clickable((By.TAG_NAME, "button"))).click()
