@@ -1,10 +1,18 @@
+import sys
 import os
 import tempfile
 
 from classes.App import App
 
 if __name__ == "__main__":
-    tmp_dir = tempfile.TemporaryDirectory(dir=os.getcwd())
+    if getattr(sys, 'frozen', False):
+        application_path = os.path.dirname(sys.executable)
+    elif __file__:
+        application_path = os.path.dirname(__file__)
+
+    os.chdir(application_path)
+
+    tmp_dir = tempfile.TemporaryDirectory()
     for path in ["errors", "purchased"]:
         os.mkdir(os.path.join(tmp_dir.name, path))
 
