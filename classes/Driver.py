@@ -137,7 +137,7 @@ class Driver(webdriver.Firefox):
                 break
             except Exception as exp:
                 if times_failed == 3:
-                    raise Exception(exp)
+                    raise NoSuchElementException(exp)
                 print("trying " + str(3 - times_failed) + " more times")
                 times_failed += 1
                 time.sleep(1)
