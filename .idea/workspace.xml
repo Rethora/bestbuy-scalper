@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7b9deaea-780d-4823-b0f8-9cc9cef06abf" name="Changes" comment="Fixed menu bar added email format method">
-      <change beforePath="$PROJECT_DIR$/.idea/pythonProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pythonProject.iml" afterDir="false" />
+    <list default="true" id="7b9deaea-780d-4823-b0f8-9cc9cef06abf" name="Changes" comment="modified">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/help.md" beforeDir="false" afterPath="$PROJECT_DIR$/assets/help.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/App.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/App.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/Driver.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Driver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.spec" beforeDir="false" afterPath="$PROJECT_DIR$/main.spec" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,7 +207,70 @@
       <option name="project" value="LOCAL" />
       <updated>1636084948947</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Added Icon">
+      <created>1636236841591</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1636236841592</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Added Icon">
+      <created>1636236869126</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1636236869126</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Added setup.py file">
+      <created>1636236889913</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1636236889913</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Updated README">
+      <created>1636236913249</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1636236913250</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Updated main.spec">
+      <created>1636236985391</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1636236985391</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Updated launch path, Changed location of tmp dir">
+      <created>1636237095792</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1636237095792</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Added troubleshooting">
+      <created>1636237129236</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1636237129236</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Refactored check stock method to try 3 times">
+      <created>1636237195843</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1636237195843</updated>
+    </task>
+    <task id="LOCAL-00021" summary="modified">
+      <created>1636237268014</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1636237268014</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -243,6 +299,14 @@
     <MESSAGE value="Multiple App changes" />
     <MESSAGE value="Fixed menu bar for macOS, made email formatter method," />
     <MESSAGE value="Fixed menu bar added email format method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed menu bar added email format method" />
+    <MESSAGE value="Added Icon" />
+    <MESSAGE value="Added setup.py file" />
+    <MESSAGE value="Updated README" />
+    <MESSAGE value="Updated main.spec" />
+    <MESSAGE value="Updated launch path, Changed location of tmp dir" />
+    <MESSAGE value="Added troubleshooting" />
+    <MESSAGE value="Refactored check stock method to try 3 times" />
+    <MESSAGE value="modified" />
+    <option name="LAST_COMMIT_MESSAGE" value="modified" />
   </component>
 </project>
