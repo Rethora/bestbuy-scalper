@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7b9deaea-780d-4823-b0f8-9cc9cef06abf" name="Changes" comment="Third Commit">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+    <list default="true" id="7b9deaea-780d-4823-b0f8-9cc9cef06abf" name="Changes" comment="Fixed menu bar added email format method">
+      <change beforePath="$PROJECT_DIR$/.idea/pythonProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pythonProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/help.md" beforeDir="false" afterPath="$PROJECT_DIR$/assets/help.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/App.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/App.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/Driver.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/Driver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.spec" beforeDir="false" afterPath="$PROJECT_DIR$/main.spec" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,8 +41,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Ryzen GamingPC\PycharmProjects\pythonProject" />
       <recent name="C:\Users\Ryzen GamingPC\PycharmProjects\pythonProject\assets" />
+      <recent name="C:\Users\Ryzen GamingPC\PycharmProjects\pythonProject" />
       <recent name="C:\Users\Ryzen GamingPC\PycharmProjects\pythonProject\classes\assets" />
       <recent name="C:\Users\Ryzen GamingPC\PycharmProjects\pythonProject\assets\selenium_profile" />
     </key>
@@ -145,7 +151,70 @@
       <option name="project" value="LOCAL" />
       <updated>1635979827531</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Changed Location of .gitignore">
+      <created>1635995239682</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1635995239682</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Removed extra comment line">
+      <created>1635995352039</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1635995352039</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added .idea folder">
+      <created>1635995392871</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1635995392871</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Changed ttk.Frame to tk.Frame for styling on macOS">
+      <created>1636079142288</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1636079142288</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Updated requirements">
+      <created>1636079290122</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1636079290122</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Changed width of spinbox to prevent disappearing on macOS">
+      <created>1636079412684</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1636079412684</updated>
+    </task>
+    <task id="LOCAL-00010" summary="removed commented out unused code">
+      <created>1636079490456</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1636079490456</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Multiple App changes">
+      <created>1636079561297</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1636079561297</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Fixed menu bar added email format method">
+      <created>1636084948947</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1636084948947</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -164,6 +233,16 @@
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Second Commit" />
     <MESSAGE value="Third Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Third Commit" />
+    <MESSAGE value="Changed Location of .gitignore" />
+    <MESSAGE value="Removed extra comment line" />
+    <MESSAGE value="Added .idea folder" />
+    <MESSAGE value="Changed ttk.Frame to tk.Frame for styling on macOS" />
+    <MESSAGE value="Updated requirements" />
+    <MESSAGE value="Changed width of spinbox to prevent disappearing on macOS" />
+    <MESSAGE value="removed commented out unused code" />
+    <MESSAGE value="Multiple App changes" />
+    <MESSAGE value="Fixed menu bar for macOS, made email formatter method," />
+    <MESSAGE value="Fixed menu bar added email format method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed menu bar added email format method" />
   </component>
 </project>
