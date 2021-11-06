@@ -1,14 +1,20 @@
 # -*- mode: python ; coding: utf-8 -*-
 
-
 block_cipher = None
 
 
 a = Analysis(['main.py'],
-             pathex=[],
+             pathex=['C:\\Users\\Ryzen GamingPC\\PycharmProjects\\pythonProject\\venv\\Lib\\site-packages'],
              binaries=[],
-             datas=[('assets/*', 'assets')],
-             hiddenimports=['selenium'],
+             datas=[
+                ('assets/bb_login_ex.png', 'assets'),
+                ('assets/confirm.txt', 'assets'),
+                ('assets/help.md', 'assets'),
+                ('assets/drhphmfl.selenium_profile/*', 'assets/drhphmfl.selenium_profile'),
+                ('assets/robot-head.ico', 'assets'),
+                ('assets/robot-head.png', 'assets')
+             ],
+             hiddenimports=[],
              hookspath=[],
              hooksconfig={},
              runtime_hooks=[],
@@ -24,12 +30,13 @@ exe = EXE(pyz,
           a.scripts, 
           [],
           exclude_binaries=True,
-          name='main',
+          name='Best Buy Scalper',
           debug=False,
           bootloader_ignore_signals=False,
           strip=False,
           upx=True,
-          console=True,
+          console=False,
+          icon='assets/robot-head.ico',
           disable_windowed_traceback=False,
           target_arch=None,
           codesign_identity=None,
