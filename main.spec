@@ -11,7 +11,6 @@ a = Analysis(['main.py'],
                 ('assets/confirm.txt', 'assets'),
                 ('assets/help.md', 'assets'),
                 ('assets/drhphmfl.selenium_profile/*', 'assets/drhphmfl.selenium_profile'),
-                ('assets/robot-head.ico', 'assets'),
                 ('assets/robot-head.png', 'assets')
              ],
              hiddenimports=[],
@@ -36,11 +35,11 @@ exe = EXE(pyz,
           strip=False,
           upx=True,
           console=False,
-          icon='assets/robot-head.ico',
           disable_windowed_traceback=False,
           target_arch=None,
           codesign_identity=None,
-          entitlements_file=None )
+          entitlements_file=None , icon='assets/robot-head.icns'
+          )
 coll = COLLECT(exe,
                a.binaries,
                a.zipfiles,
@@ -48,4 +47,10 @@ coll = COLLECT(exe,
                strip=False,
                upx=True,
                upx_exclude=[],
-               name='main')
+               name='BestBuyScalper'
+               )
+app = BUNDLE(coll,
+             name='Best Buy Scalper.app',
+             icon='assets/robot-head.icns',
+             bundle_identifier=None
+             )
