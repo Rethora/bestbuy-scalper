@@ -17,7 +17,7 @@ import time
 from datetime import datetime
 import threading
 import webbrowser
-from os import listdir, name
+from os import listdir, name, getcwd
 from os.path import isfile, join
 
 from classes.frames.StartPage import StartPage
@@ -38,7 +38,7 @@ class App(Tk):
         self.title("Best Buy Scalper")
         self.minsize(1000, 700)
         if name != "posix":
-            icon = PhotoImage(file="assets/robot-head.png")
+            icon = PhotoImage(file=join(getcwd(), "assets", "robot-head.png"))
             self.iconphoto(False, icon)
 
         "global window styles"
