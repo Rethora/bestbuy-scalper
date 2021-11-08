@@ -289,11 +289,10 @@ class Driver(webdriver.Firefox):
 
         self._wait_until_not_loading()
 
-        # TODO: uncomment buy method
-        # curr_url = self.current_url
-        # WebDriverWait(btn_div, timeout=self.my_timeout).until(
-        #     EC.element_to_be_clickable((By.TAG_NAME, "button"))).click()
-        # WebDriverWait(self, timeout=30).until(EC.url_changes(curr_url))
+        curr_url = self.current_url
+        WebDriverWait(btn_div, timeout=self.my_timeout).until(
+            EC.element_to_be_clickable((By.TAG_NAME, "button"))).click()
+        WebDriverWait(self, timeout=30).until(EC.url_changes(curr_url))
         return True
 
     def _payment_method(self, wait):
@@ -311,11 +310,10 @@ class Driver(webdriver.Firefox):
 
         self._wait_until_not_loading()
 
-        # TODO: uncomment buy method
-        # curr_url = self.current_url
-        # WebDriverWait(btn_div, timeout=self.my_timeout).until(
-        #     EC.element_to_be_clickable((By.TAG_NAME, "button"))).click()
-        # WebDriverWait(self, timeout=30).until(EC.url_changes(curr_url))
+        curr_url = self.current_url
+        WebDriverWait(btn_div, timeout=self.my_timeout).until(
+            EC.element_to_be_clickable((By.TAG_NAME, "button"))).click()
+        WebDriverWait(self, timeout=30).until(EC.url_changes(curr_url))
         return True
 
     def _is_loading(self):
@@ -342,37 +340,3 @@ class Driver(webdriver.Firefox):
                 raise TimeoutError("Timed out at checking for page loading.")
             time.sleep(.5)
         time.sleep(1)
-
-
-"""DRIVER TESTS"""
-
-
-# drivers = []
-# d = Driver()
-# d.add_user_prop("warranty", True)
-# d.get("https://www.bestbuy.com/site/jlab-go-work-wireless-office-headset-black/6460025.p?skuId=6460025")
-# in_stock = d.check_stock()
-# if in_stock:
-#     d.add_to_cart()
-# drivers.append(d)
-# d.add_user_prop("warranty", False)
-# d.get("https://www.bestbuy.com/site/sony-playstation-5-console/6426149.p?skuId=6426149")
-# time.sleep(3)
-# d.refresh()
-# in_stock = d.check_stock()
-# # added = d.add_to_cart()
-# print(d.user_properties)
-# if not in_stock:
-#     d.quit()
-#     drivers.remove(d)
-# time.sleep(3)
-# print(drivers)
-# if __name__ == "__main__":
-# driver = Driver()
-# driver.get("https://google.com")
-# driver.take_screenshot(os.getcwd(), name="test")
-# took_pic = driver.save_full_page_screenshot(os.getcwd() + "\\test.png")
-# print(str(took_pic))
-# driver.take_screenshot(os.getcwd(), name="test", rmv_ext=True)
-# ROOT_DIR = Path(__file__).parent.parent
-# print(ROOT_DIR)
