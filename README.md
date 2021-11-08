@@ -58,3 +58,17 @@ In method:
 ```python
 Service.__init__()
 ```
+
+On Windows this application is bundled with python 3.10 and on macOS it is bundled with python 3.8.  
+Unfortunately I couldn't easily figure out app instances on macOS. So, to launch multiple instances of the application users will have to open a terminal and open the app via:  
+```shell
+$ open -n path/to/app.app
+```
+or
+
+1. navigate to folder location of .app
+2. right-click
+3. "Open New Terminal at Folder"
+```shell
+$ open -n .
+```
