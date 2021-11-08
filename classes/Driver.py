@@ -29,8 +29,7 @@ class Driver(webdriver.Firefox):
         profile = FirefoxProfile(self.ff_profile_path)
         "default driver options"
         options = FirefoxOptions()
-        # TODO: uncomment headless
-        # options.headless = True
+        options.headless = True
 
         "install executable (or find in cache) for driver"
         service = Service(GeckoDriverManager().install())
