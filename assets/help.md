@@ -22,7 +22,7 @@ in order to work properly. Here is [Best Buy's Support Page](https://www.bestbuy
 that will be helpful if you wish to make any changes  
 to orders that were processed (like returns or changes).
 
-#### Before Scalping:
+#### Before Scalping
 
 1. For every account you are using
     - Go to <https://www.bestbuy.com>
@@ -40,10 +40,24 @@ to orders that were processed (like returns or changes).
     - This is the browser that this application uses
 4. Set your computer's sleep settings to never sleep/hibernate
     - This will cause application to stop running
+    
+#### Mac
 
-#### Troubleshooting:
+When trying to launch another instance of the application,  
+it will just focus the window you currently have open.  
+To get around this you will need to:
 
-1. Make sure Firefox is up-to-date
+1. Go to the location where the app is stored on your computer
+2. Right-click on the app
+3. Select the option "New Terminal at Folder"
+4. Use the command: ***open -n .***
+   - Make sure you enter the period and spacing is correct
+   - Enter this command for every app you want open
+6. Close the terminal window when you have all your apps
+
+#### Troubleshooting
+
+1. Make sure Firefox is downloaded and up-to-date
 2. Checking link/logins on Windows:
    - Sometimes web browser does not initialize properly
    - Just try a few more times
@@ -51,4 +65,4 @@ to orders that were processed (like returns or changes).
 3. 'Something went wrong error'
    - Sometimes Best Buy forbids requests if too many hits are being made on server
    - More specifically on login
-   - Try again later (maybe a couple hours)
+   - Try again later (maybe a couple of hours)
