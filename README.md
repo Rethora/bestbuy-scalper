@@ -28,6 +28,7 @@ Bundled output to "/dist"
 ## Usage on Linux
 We won't actually bundle program, we will just run it through PYTHON3
 - Build the project
+- Make sure you have "Tkinter" installed on the distro you're using
 - In the root directory of active environment, run the main.py entry file
 
 ```shell
