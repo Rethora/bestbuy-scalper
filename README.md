@@ -31,7 +31,7 @@ We won't actually bundle program, we will just run it through PYTHON3
 - In the root directory of active environment, run the main.py entry file
 
 ```shell
-$ py main.py
+$ python main.py
 ```
 
 ## Installing the Application
